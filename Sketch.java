@@ -1,14 +1,16 @@
 import processing.core.PApplet;
+import processing.core.PFont;
 
 public class Sketch extends PApplet {
 	
-	
+PFont f;
   /**
    * Called once at the beginning of execution, put your size all in this method
    */
   public void settings() {
 	// put your size call here
     size(400, 400);
+
   
   }
 
@@ -18,7 +20,9 @@ public class Sketch extends PApplet {
    */
   public void setup() {
     background(0, 120, 255);
+    f = createFont("Arial", 24, true);
     noLoop();
+
   }
 
   /**
@@ -55,6 +59,12 @@ public class Sketch extends PApplet {
     rect(random2 - 100, 250, 150, 400);
     rect(random2 + 100, 250, 150, 400);
     rect(random2, 200, 150, 400);
+    textFont(f);
+    fill(0);
+    textAlign(LEFT);
+    String time = (hour() + ":" + minute() + ":" + second());
+    text(time, 0, 350);
+
     
 
     
